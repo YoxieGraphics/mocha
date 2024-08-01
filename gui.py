@@ -15,12 +15,12 @@ class YTDLP_GUI(QMainWindow):
     def __init__(self):
         super().__init__()
         self.download_thread = None
-        self.setWindowIcon(QIcon('./icon.ico'))
         self.initUI()
-        load_settings(self)
+        load_settings(self)  # Load settings on initialization
 
     def initUI(self):
-        self.setWindowTitle('yt-dlp GUI')
+        self.setWindowTitle('Mocha')
+        self.setWindowIcon(QIcon('logo.png'))
         self.setGeometry(100, 100, 400, 415)
         self.setFixedSize(400, 415)  # Set the window size and make it non-resizable
 

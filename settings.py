@@ -1,7 +1,13 @@
 import os
 import json
+from pathlib import Path
 
-SETTINGS_FILE = 'settings.json'
+# Define the settings directory and file
+SETTINGS_DIR = Path.home() / 'mocha-downloader'
+SETTINGS_FILE = SETTINGS_DIR / 'settings.json'
+
+# Ensure the settings directory exists
+SETTINGS_DIR.mkdir(parents=True, exist_ok=True)
 
 def save_settings(gui):
     settings = {
@@ -13,7 +19,7 @@ def save_settings(gui):
         json.dump(settings, f)
 
 def load_settings(gui):
-    if os.path.exists(SETTINGS_FILE):
+    if SETTINGS_FILE.exists():
         with open(SETTINGS_FILE, 'r') as f:
             settings = json.load(f)
             gui.url_input.setText(settings.get('url', ''))
