@@ -1,5 +1,5 @@
 # Mocha ☕
-Mocha is a sleek, easy to use and (somewhat) customisable YouTube video downloader.
+Mocha is a sleek, easy to use and (somewhat) customisable online video downloader which supports thousands of sites.
 
 ## Installation
 You can either build it from source or use the releases tab to download an exe. The exe is build using auto-py-to-exe and has all the libraries bundled in, hence the atrocious file size.

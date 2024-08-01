@@ -1,7 +1,6 @@
 import os
 import json
-
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QFont, QPixmap, QPalette, QBrush
 from PyQt5.QtWidgets import (
     QMainWindow, QWidget, QLabel, QPushButton, QVBoxLayout,
     QHBoxLayout, QLineEdit, QFileDialog, QMessageBox, QProgressBar,
@@ -20,14 +19,14 @@ class YTDLP_GUI(QMainWindow):
 
     def initUI(self):
         self.setWindowTitle('Mocha')
-        self.setWindowIcon(QIcon('logo.png'))
+        self.setWindowIcon(QIcon('icons/coffee_icon.png'))
         self.setGeometry(100, 100, 400, 415)
         self.setFixedSize(400, 415)  # Set the window size and make it non-resizable
 
         self.setStyleSheet("""
             QWidget {
-                background-color: #121212;
-                color: #E0E0E0;
+                background-color: #3E2723;
+                color: #D7CCC8;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 font-size: 20px;
             }
@@ -36,45 +35,54 @@ class YTDLP_GUI(QMainWindow):
                 margin-bottom: 10px;
             }
             QLineEdit, QComboBox {
-                background-color: transparent;
-                border: 1px solid #3C3C3C;
+                background-color: #5D4037;
+                border: 1px solid #4E342E;
                 border-radius: 5px;
                 padding: 5px;
                 font-size: 20px;
+                color: #D7CCC8;
             }
             QPushButton {
-                background-color: transparent;
-                border: 1px solid #3B82F6;
+                background-color: #8D6E63;
+                border: 1px solid #6D4C41;
                 border-radius: 5px;
-                color: #3B82F6;
+                color: #D7CCC8;
                 font-size: 20px;
                 padding: 10px;
             }
             QPushButton:hover {
-                background-color: #3B82F6;
+                background-color: #6D4C41;
                 color: white;
             }
             QProgressBar {
-                border: 1px solid #3C3C3C;
+                border: 1px solid #4E342E;
                 border-radius: 5px;
-                background-color: transparent;
+                background-color: #5D4037;
                 text-align: center;
-                color: #E0E0E0;
+                color: #D7CCC8;
                 font-size: 20px;
             }
             QProgressBar::chunk {
-                background-color: #3B82F6;
+                background-color: #D7CCC8;
                 border-radius: 5px;
             }
             QRadioButton {
                 margin-right: 10px;
                 font-size: 20px;
             }
+            
+            
         """)
 
         # Create a central widget and set it as the central widget
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
+
+        # Set background image for central widget
+        palette = QPalette()
+        palette.setBrush(QPalette.Window, QBrush(QPixmap('images/coffee_background.jpg')))
+        central_widget.setAutoFillBackground(True)
+        central_widget.setPalette(palette)
 
         main_layout = QVBoxLayout(central_widget)
 
