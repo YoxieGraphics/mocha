@@ -9,7 +9,7 @@ To build from source you can use these simple commands, you will need [python](h
 
 ``git clone https://github.com/YoxieGraphics/mocha.git``
 
-``pip install requirements.txt``
+``pip install -r requirements.txt``
 
 ``pyinstaller --noconfirm --onefile --windowed --icon ".\icon.ico" --name "mocha" --add-data ".\downloader.py;." --add-data ".\gui.py;." --add-data ".\settings.py;."  ".\main.py"``
 
