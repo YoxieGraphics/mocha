@@ -11,6 +11,6 @@ To build from source you can use these simple commands, you will need [python](h
 
 ``pip install -r requirements.txt``
 
-``pyinstaller --noconfirm --onefile --windowed --icon ".\icon.ico" --name "mocha" --add-data ".\downloader.py;." --add-data ".\gui.py;." --add-data ".\settings.py;."  ".\main.py"`` (This may take a few minutes)
+``pyinstaller --noconfirm --onefile --windowed --icon ".\logo.ico" --name "Mocha" --add-data ".\.gitignore;." --add-data ".\downloader.py;." --add-data ".\gui.py;." --add-data ".\logo.ico;." --add-data ".\logo.png;." --add-data ".\settings.py;."  ".\main.py"`` (This may take a few minutes)
 
 Now navigate to the 'dist' directory and the mocha binary will be there
