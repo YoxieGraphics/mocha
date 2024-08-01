@@ -1,5 +1,7 @@
 import os
 import json
+
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (
     QMainWindow, QWidget, QLabel, QPushButton, QVBoxLayout,
     QHBoxLayout, QLineEdit, QFileDialog, QMessageBox, QProgressBar,
@@ -13,7 +15,7 @@ class YTDLP_GUI(QMainWindow):
     def __init__(self):
         super().__init__()
         self.download_thread = None
-
+        self.setWindowIcon(QIcon('./icon.ico'))
         self.initUI()
         load_settings(self)
 
