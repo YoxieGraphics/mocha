@@ -15,13 +15,13 @@ class YTDLP_GUI(QMainWindow):
         super().__init__()
         self.download_thread = None
         self.initUI()
-        load_settings(self)  # Load settings on initialization
+        load_settings(self)
 
     def initUI(self):
         self.setWindowTitle('Mocha')
         self.setWindowIcon(QIcon('icons/coffee_icon.png'))
         self.setGeometry(100, 100, 400, 415)
-        self.setFixedSize(400, 415)  # Set the window size and make it non-resizable
+        self.setFixedSize(400, 415)
 
         self.setStyleSheet("""
             QWidget {
@@ -74,11 +74,9 @@ class YTDLP_GUI(QMainWindow):
             
         """)
 
-        # Create a central widget and set it as the central widget
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
 
-        # Set background image for central widget
         palette = QPalette()
         palette.setBrush(QPalette.Window, QBrush(QPixmap('images/coffee_background.jpg')))
         central_widget.setAutoFillBackground(True)
@@ -126,7 +124,6 @@ class YTDLP_GUI(QMainWindow):
         self.cancel_button.clicked.connect(self.cancel_download)
         self.cancel_button.setVisible(False)
 
-        # Add widgets to layout
         main_layout.addWidget(self.url_label)
         main_layout.addWidget(self.url_input)
         main_layout.addWidget(self.output_type_label)
@@ -136,7 +133,7 @@ class YTDLP_GUI(QMainWindow):
         main_layout.addWidget(self.progress_bar)
         main_layout.addWidget(self.download_button)
         main_layout.addWidget(self.cancel_button)
-        main_layout.addStretch()  # Add a stretch at the end to push widgets up
+        main_layout.addStretch()
 
     def browse_location(self):
         options = QFileDialog.Options()
