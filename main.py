@@ -7,10 +7,10 @@ def main():
     app = QApplication(sys.argv)
     ex = YTDLP_GUI()
 
-    # Load settings when the application starts
+    # might load settings idrk
     load_settings(ex)
 
-    # Ensure settings are saved when the application closes
+    # should save settings
     app.aboutToQuit.connect(lambda: save_settings(ex))
 
     ex.show()
